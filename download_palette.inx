@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension>
+  <name>Download</name>
+  <id>hardpixel.eu.download_palette</id>
+  <dependency type="executable" location="extensions">download_palette.py</dependency>
+  <dependency type="executable" location="extensions">simplestyle.py</dependency>
+
+  <param name="description" type="description" indent="-1">Download palettes from the collection below or from a URL.</param>
+  <param name="collection-title" type="description" appearance="header">Download from collection</param>
+  <!-- Predefined palettes -->
+  <param name="bright-shiny" type="boolean" gui-text="Bright and Shiny">false</param>
+  <param name="flat-ui" type="boolean" gui-text="Flat UI Colors">false</param>
+  <param name="material-design" type="boolean" gui-text="Material Design">false</param>
+  <param name="pastel-manis" type="boolean" gui-text="Pastel Manis">false</param>
+  <param name="round-tasmania" type="boolean" gui-text="Round Tasmania">false</param>
+  <!-- Download from URL -->
+  <param name="url-title" type="description" appearance="header">Download from URL</param>
+  <param name="name-label" type="description" indent="-1">File Name</param>
+  <param name="name" type="string" gui-text=""></param>
+  <param name="url-label" type="description" indent="-1">File URL</param>
+  <param name="url" type="string" gui-text=""></param>
+  <param name="help-text" type="description" indent="-1">ℹ️ Don't forget to restart Inkscape </param>
+
+  <effect needs-live-preview="false">
+    <object-type>all</object-type>
+    <effects-menu>
+      <submenu _name="Palette"/>
+    </effects-menu>
+  </effect>
+
+  <script>
+    <command reldir="extensions" interpreter="python">download_palette.py</command>
+  </script>
+</inkscape-extension>
